@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+input.one {
+	border-style: hidden;
+	border-width: 0px;
+	font-size: 16px;
+	font-family: "Times New Roman", Times, serif;
+
+}
+input, textarea {
+  outline: none;
+  width: 40%;
+}
+body {
+	background-image: url("https://c1.staticflickr.com/3/2621/3801987960_eb681a8c56_b.jpg");
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-attachment: fixed;
+	background-size: 50%
+}
+p.tooltip {
+	position: fixed;
+    left: 800px;
+    top: 500px;
+  /*  visibility: hidden;  */
+}
+p.hud {
+	position: fixed;
+    left: 630px;
+    top: 380px;	
+    border-style: 1px solid black
+}
+div {
+	width: 48%
+}
+span.title {
+	 color: gold;
+	 font-family: Comic Sans MS cursive sans-serif;
+	 font-size: 300%
+}
+
+</style><script src="gamedata.js"></script>
+<p id="bonSante" class="hud">Health: 21 Vitality: 20</p>
+<p class="tooltip">
+	Credits: <br><br>
+	Dev team: Finlay Norton-Lindsay <br>
+	Enginering Manager: Finlay Norton-Lindsay <br>
+	Special Effects Team: ... <br>
+	Consoultants: Stack Overflow <br>
+	 and, w3schools <br>	
+	Special thanks to: my dad Michael Norton-Lindsay and my freind David who have been reliable third opinions when it dosent make sense. <br><br><br>
+
+	tip: <i>help</i> will give you a menu with your options in game!
+</p>
+</head>
+<body>
+<span class="title">Golden Ramparts</span>
+<div id="paragraphs"></div>
+<span>> <input type="text" id="respo" value="Do stuff" class="one"></span>
+<script src="run__game.js"></script>
+
+</body>
+</html>
