@@ -35,11 +35,11 @@
 }	
 	
 	
-	var player = {inventory: ["apple", "apple", "apple", "apple", "apple", "book", "knife"], hunger: 20, health: 21, location: "", equiped_weapon: "knife", equiped_armor: "clothes"}
+	var player = {inventory: ["apple", "apple", "apple", "apple", "apple", "book", "knife", "clothes"], hunger: 20, health: 21, location: "", equiped_weapon: "knife", equiped_armor: "clothes"}
 	player.location = "courtyard"
 	document.getElementById('bonSante').value = "Health: " + player.health
 	
-	var response = ""
+	var attackedWords = ""
 	var attacker = ""
 	var runWords = ""
 	var stop = false
@@ -48,8 +48,10 @@
 	}
 	function getHurt() {
 		if(attacker != "") {
-			player.health -= getNpc(attacker).damage
-			response = ""
+			var Amount_hurt = (getNpc(attacker).damage - getItem(player.equiped_armor).protection)
+			if(Amount_hurt < 0) Amount_hurt = 1
+			player.health -= Amount_hurt
+			attackedWords = ""
 			return true
 		} else {
 			return false
@@ -100,14 +102,15 @@
 			a = getNpc(respo).health
 			b = Math.round(Math.random()*(1 - a)+a)
 			if(b <= 15 && a > 0) {
-				response = " Angered they attack you in turn."
-				attacker = respo
+				attackedWords = " Angered they attack you in turn."
 			} else if(b > 15) {
-				response = "They are indifrent to your attack"
+				attackedWords = "They are indifrent to your attack"
+				attacker = ""
 			} if(a <= 0) {
-				response = " Your blow is fatal, and they fall to the ground, quite dead."
+				attackedWords = " Your blow is fatal, and they fall to the ground, quite dead."
+				attacker = ""
 			}
-			return "you hit " + respo + " with your " + player.equiped_weapon + "." + response
+			return "you hit " + respo + " with your " + player.equiped_weapon + "." + attackedWords
 		} else {
 			return "sorry there is not a " + respo + " here for you to strike."
 		}
@@ -175,7 +178,7 @@
 	player.read = function(respo) {
 		player.hunger += 0.25
 		if(check_inventory(respo) && getItem(respo).special == "can be read") {
-			return "you read the " + respo + "."
+			return getItem(respo).writing
 		} else {
 			return "Can't, sorry."
 		}
@@ -221,7 +224,7 @@
 		var a = 0
 		var b = player.hunger
 		if(Math.random()*(b - a)+a  >= 7) {
-			response = "Blocked"
+			attackedWords = "Blocked"
 			attacker = ""
 			return "You sucsesfuly block their attack! <br> They fall back and wait for your next attack!"
 		} else {
@@ -328,12 +331,12 @@ function html_cleanUp(input) {
     window.scrollTo(0, 100134058934549688395783457823578258399);
     var sante = document.getElementById('bonSante')
     sante.innerHTML = "Health: " + player.health + "  Vitality: " + player.hunger
-    if(response != "Blocked") {
+    if(attackedWords != "Blocked") {
     	for (var i = getRoom(player.location).npcs.length - 1; i >= 0; i--) {
     		if(getNpc(getRoom(player.location).npcs[i].npc_key).mood == "malevolent") {
     			say_things("The " + getNpc(getRoom(player.location).npcs[i].npc_key).name[0] + " attacks you.")
     			attacker = getNpc(getRoom(player.location).npcs[i].npc_key).name[0]
-    			response = "Ouch!"
+    			attackedWords = "Attacking"
     		}
     	}
 	}
@@ -371,6 +374,9 @@ function listener(event) {
 		}
 		attacker = ""
 		html_cleanUp(responseArray)	
+		if(attackedWords == " Angered they attack you in turn.") {
+			attacker = respo
+		}
 	}
 }
 
