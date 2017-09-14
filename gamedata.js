@@ -217,8 +217,8 @@ var gamedata = {
 		{
 			"item_key": "book",
 			"name": ["book", "novel"],
-			"damage": 1,
 			"weight": 1,
+			"writing": "A book, by Finlay Norton-Lindsay. \n For the purpouses of this demo game this is a book that can be read. I would like to personaly \n congradulate you on reading this book, I must say, it is an impresive acomplishment. You found my existance in \n your inventory, read the help text on reading, put two and two together, and then you typed a whole nine charecters \n into this computor and it gave you me, your everyday book. In fact, as a vote of confidence, \n and a token of my gratitude for reading me I have gived you +0.0025 vitality 100 times!",
 			"special": "can be read",
 			"room": ["bedroom"]
 		},
@@ -238,8 +238,18 @@ var gamedata = {
 			"name": ["decorative armor", "armor", "set of decorative armor", "Inistrad", "decorative_armor"],
 			"damage": 0,
 			"weight": 10,
+			"protection": 8,
 			"special": "armor",
 			"room": ["entrance_hall"]
+		},
+		{
+			"item_key": "clothes",
+			"name": ["clothes", "armor", "garments"],
+			"damage": 0,
+			"weight": 2,
+			"protection": 1,
+			"special": "armor",
+			"room": []
 		},
 		{
 			"item_key": "apple",
@@ -257,7 +267,44 @@ var gamedata = {
 			"weight": .5,
 			"special": "weapon",
 			"room": []
-		}
+		}/*,
+	/*	{
+			room: "",
+			name: "antique sword",
+			damage: 6
+		},
+		{
+			room: "",
+			name: "heirloom broadsword",
+			damage: 9
+		},
+		{
+			room: "courtyard",
+			name: "shovel",
+			damage: 4
+		},
+		{
+			room: "",
+			name: "metal teapot",
+			damage: 3,
+			is_legendary: true
+		},
+		{
+			room: "",
+			name: "sharpened axe",
+			damage: 7
+		},
+		{
+			room: "",
+			name: "butter knife",
+			damage: 2
+		},
+		{
+			room: "",
+			name: "crimson knife",
+			damage: 10,
+			cursed: true
+		}*/
 	]
 };
 /*var theMap = {
