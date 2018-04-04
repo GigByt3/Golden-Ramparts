@@ -13,7 +13,7 @@ var gamedata = {
 			"npcs": [
 				{
 					"npc_key": "zombie",
-					"look_suffix": " There is a zombie shuffling around here."
+					//"look_suffix": " There is a zombie shuffling around here."
 				}
 			],
 			"exits": {
@@ -40,7 +40,7 @@ var gamedata = {
 			"npcs": [
 				{
 					"npc_key": "noble",
-					"look_suffix": " A strident gentelman glides around the room. Nodding to you good nauturedly."
+					//"look_suffix": " A strident gentelman glides around the room. Nodding to you good nauturedly."
 				}
 			],
 			"exits": {
@@ -55,13 +55,13 @@ var gamedata = {
 			"items": [
 				{
 					"item_key": "decorative_armor",
-					"look_suffix": " There is a set of decorative armor here."
+					//"look_suffix": " There is a set of decorative armor here."
 				}
 			],
 			"npcs": [
 				{
 					"npc_key": "murdurer",
-					"look_suffix": " A shadowy figure lurks in the shadows, an axe barely visible beneath the deep folds."
+					//"look_suffix": " A shadowy figure lurks in the shadows, an axe barely visible beneath the deep folds."
 				}
 			],
 			"exits": {
@@ -83,7 +83,7 @@ var gamedata = {
 			"npcs": [
 				{
 					"npc_key": "automoton",
-					"look_suffix": " A giant metal mech walks around the room, steam hissing at its every move."
+					//"look_suffix": " A giant metal mech walks around the room, steam hissing at its every move."
 				}
 			],
 			"exits": {
@@ -104,7 +104,7 @@ var gamedata = {
 			"npcs": [
 				{
 					"npc_key": "florist",
-					"look_suffix": "A lady walks around the room with a vase of flowers in the crook of her arm. "
+					//"look_suffix": "A lady walks around the room with a vase of flowers in the crook of her arm. "
 				}
 			],
 			"exits": {
@@ -175,7 +175,11 @@ var gamedata = {
 			"loot": [
 				{
 				"item_key": "wood_axe",
-				"look_suffix": "The would be homocidal maniac lies on the floor, the axe that made him, on the floor at his side. "
+				"look_suffix": "There is an axe here"
+				}
+				{
+				"item_key": "murderer_body"
+				"Ironicly the 'murderer' lies on the floor, murdered by his only victim."
 				}
 			]
 		},
