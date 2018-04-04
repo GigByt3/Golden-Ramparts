@@ -190,7 +190,7 @@
 			extras += room.items[i].look_suffix
 		};		
 		for (var i = room.npcs.length - 1; i >= 0; i--) {
-			extras += room.npcs[i].look_suffix
+			extras += getNpc(room.npcs[i].name).look_suffix
 		};
 		return room.description + extras
 	}; 
