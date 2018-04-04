@@ -7,7 +7,7 @@ var gamedata = {
 			"items": [
 				{
 					"item_key": "vase_of_flowers",
-					"look_suffix": " On one of the side tables there resides a vase of flowers. "
+					"look_suffix": " On one of the side tables there is a vase of flowers. "
 				}
 			],
 			"npcs": [
